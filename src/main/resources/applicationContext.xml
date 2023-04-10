@@ -7,28 +7,5 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-
-    <bean id="classicalMusic"
-          class="forspring.ClassicalMusic">
-    </bean>
-    <bean id = "rockMusic"
-          class = "forspring.RockMusic">
-    </bean>
-    <bean id = "jazzMusic"
-          class = "forspring.JazzMusic">
-    </bean>
-
-    <bean id = "musicPlayer" class = "forspring.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="classicalMusic"/>
-                <ref bean="rockMusic"/>
-                <ref bean="jazzMusic"/>
-            </list>
-        </property>
-        <property name="name" value = "${musicPlayer.name}"/>
-        <property name="volume" value = "${musicPlayer.volume}"/>
-    </bean>
-
+    <context:component-scan base-package="forspring"/>
 </beans>

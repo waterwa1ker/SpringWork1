@@ -1,9 +1,28 @@
 package forspring;
 
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
 public class JazzMusic implements Music{
+
+    public void init(){
+        System.out.println("initialization...");
+    }
+
+    public void destroy(){
+        System.out.println("destroying...");
+    }
+
     @Override
-    public String getSong() {
-        return "Random jazz song";
+    public List<String> getSong() {
+        List<String> songNames = new ArrayList<>();
+        songNames.add("firstJazz");
+        songNames.add("secondJazz");
+        songNames.add("thirdJazz");
+        return songNames;
     }
 
     @Override
