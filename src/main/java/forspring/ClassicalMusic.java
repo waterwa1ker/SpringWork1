@@ -5,14 +5,11 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class ClassicalMusic implements Music {
 
-    private ClassicalMusic(){}
+    public ClassicalMusic(){}
 
-    public static ClassicalMusic getClassicalMusic(){
-        return new ClassicalMusic();
-    }
 
     @Override
     public List<String> getSong() {
